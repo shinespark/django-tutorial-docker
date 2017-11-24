@@ -3,3 +3,4 @@ django-extensions==1.9.7
 prompt-toolkit==1.0.15
 PyMySQL==0.7.11
 pytz==2017.3
+django-hamlpy
