@@ -1,0 +1,17 @@
+{
+  "name": "django-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "popper.js": "^1.12.3",
+    "bootstrap": "^4.0.0-beta.2",
+    "jquery": "^1.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

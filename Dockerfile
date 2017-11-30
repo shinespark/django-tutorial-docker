@@ -11,6 +11,12 @@ RUN apt-get -y upgrade
 RUN apt-get install -y python3-pip
 RUN pip3 install --upgrade pip
 
-COPY django-tutorial/requirements.txt /code/
-RUN pip3 install -r /code/requirements.txt
+# for Django
 COPY django-tutorial /code/
+RUN pip3 install -r /code/requirements.txt
+
+# for Bootstrap
+RUN apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get install -y nodejs
+RUN npm install

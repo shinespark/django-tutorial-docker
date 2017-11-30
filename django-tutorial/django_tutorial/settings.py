@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -64,14 +65,18 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
             'loaders': (
-                ('django.template.loaders.cached.Loader', (
-                    'hamlpy.template.loaders.HamlPyFilesystemLoader',
-                    'hamlpy.template.loaders.HamlPyAppDirectoriesLoader',
-                )),
+                'hamlpy.template.loaders.HamlPyFilesystemLoader',
+                'hamlpy.template.loaders.HamlPyAppDirectoriesLoader',
             ),
         },
     },
 ]
+# 'loaders': (
+#     ('django.template.loaders.cached.Loader', (
+#         'hamlpy.template.loaders.HamlPyFilesystemLoader',
+#         'hamlpy.template.loaders.HamlPyAppDirectoriesLoader',
+#     )),
+# ),
 
 WSGI_APPLICATION = 'django_tutorial.wsgi.application'
 
@@ -128,3 +133,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'node_modules/jquery'),
+    os.path.join(BASE_DIR, 'node_modules/bootstrap/dist/js'),
+    os.path.join(BASE_DIR, 'node_modules/bootstrap/dist/css'),
+]
+
+SASS_PROCESSOR_ROOT = 'static'
+SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r'^.+\.scss$'
+SASS_PRECISION = 8
+SASS_OUTPUT_STYLE = 'compact'
